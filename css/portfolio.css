@@ -1393,3 +1393,36 @@ body:has(dialog[open]) {
   font-size:12px;
   padding:5px 0;
 }
+
+/* Keep language selection visible on desktop and mobile. */
+.header-actions {
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+.language-switch {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-family:var(--mono);
+  font-size:10px;
+}
+.language-switch a {
+  min-width:24px;
+  text-align:center;
+  padding:7px 0;
+  border-bottom:1px solid transparent;
+  opacity:.65;
+}
+.language-switch a[aria-current],.language-switch a:hover {
+  opacity:1;
+  border-bottom-color:currentColor;
+}
+@media(max-width:760px) {
+  .header-actions {
+    gap:18px;
+  }
+  .home-page .language-switch {
+    color:var(--paper);
+  }
+}
